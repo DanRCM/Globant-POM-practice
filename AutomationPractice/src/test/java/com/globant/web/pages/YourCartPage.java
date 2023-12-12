@@ -23,9 +23,8 @@ public class YourCartPage extends BasePage{
     @FindBy(className = "shopping_cart_link")
     private WebElement shopping;
 
-    public InformationPage clickOncheckout(){
+    public void clickOncheckout(){
         btnCheckout.click();
-        return new InformationPage(super.driver);
     }
 
     public void removeThreeElements(){

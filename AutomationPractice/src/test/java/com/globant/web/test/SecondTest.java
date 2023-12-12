@@ -1,6 +1,7 @@
 package com.globant.web.test;
 
 import com.globant.web.pages.*;
+import com.globant.web.test.util.DataProviderTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -17,12 +18,10 @@ public class SecondTest {
         loginPage = new LoginPage(driver, "https://www.saucedemo.com/");
     }
 
-    @Test
-    public void LoginPage() {
-        ProductPage productPage = loginPage.getProductPage("standard_user", "secret_sauce");
-
+    @Test(dataProvider = "LoginDataProvider", dataProviderClass = DataProviderTest.class)
+    public void test2(String user, String psw) {
+        ProductPage productPage = loginPage.getProductPage(user, psw);
         YourCartPage yourCartPage = productPage.addThreeProducts();
-
         yourCartPage.removeThreeElements();
         Assert.assertEquals(yourCartPage.comprobateShoopingCart(),"");
     }
