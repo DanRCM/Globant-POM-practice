@@ -10,7 +10,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ThirdTest {
+public class LogoutTest {
     WebDriver driver = new ChromeDriver();
     LoginPage loginPage;
 
