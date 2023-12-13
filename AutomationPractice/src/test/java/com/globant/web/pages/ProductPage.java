@@ -30,26 +30,27 @@ public class ProductPage extends BasePage{
     public void selectProduct(){
         btnCart.click();
     }
-    public YourCartPage addProduct(){
+    public void addProduct(){
         selectProduct();
         btnShop.click();
-        return new YourCartPage(super.getDriver());
     }
 
     public void clickOnMenu(){
         btnmenu.click();
     }
 
-    public LoginPage clickLogout(){
+    public void clickLogout(){
         btnLogout.click();
-        return new LoginPage(super.getDriver(), "https://www.saucedemo.com/");
     }
 
-    public  YourCartPage addThreeProducts(){
+    public WebElement getBtnLogout(){
+        return btnLogout;
+    }
+
+    public  void addThreeProducts(){
         btnCart.click();
         btnCart2.click();
         btnCart3.click();
         btnShop.click();
-        return new YourCartPage(super.getDriver());
     }
 }

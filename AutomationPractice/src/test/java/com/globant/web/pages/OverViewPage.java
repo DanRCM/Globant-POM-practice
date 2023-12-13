@@ -8,11 +8,10 @@ public class OverViewPage extends BasePage{
     public OverViewPage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(className ="btn_action")
+    @FindBy(id ="finish")
     private WebElement btnFinish;
 
-    public FinishPage getFinishPage(){
+    public void clickOnFinish(){
         btnFinish.click();
-        return new FinishPage(super.driver);
     }
 }

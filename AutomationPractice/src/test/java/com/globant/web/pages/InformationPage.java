@@ -20,11 +20,13 @@ public class InformationPage extends BasePage{
     @FindBy(id="continue")
     private WebElement btnContinue;
 
-    public OverViewPage getOverViewPage(String first, String last, String postalC){
+    public void sentInformation(String first, String last, String postalC){
         fName.sendKeys(first);
         lName.sendKeys(last);
         pCode.sendKeys(postalC);
+    }
+
+    public void clickOnContinue(){
         btnContinue.click();
-        return new OverViewPage(super.driver);
     }
 }

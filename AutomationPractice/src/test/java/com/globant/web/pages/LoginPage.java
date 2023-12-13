@@ -18,12 +18,12 @@ public class LoginPage extends BasePage{
         return textLogin.getText();
     }
 
-    public ProductPage getProductPage(String user, String psw){
+    public void enterLoginPage(String user, String psw){
         userName.sendKeys(user);
         password.sendKeys(psw);
         btnlogin.click();
-        return new ProductPage(super.getDriver());
     }
+
     public LoginPage(WebDriver driver, String url){
         super(driver);
         super.driver.get(url);
